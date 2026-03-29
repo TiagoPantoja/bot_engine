@@ -70,20 +70,17 @@ Establish a WebSocket connection to the endpoint:
 
 Once connected, send the following JSON payload to join a specific room (e.g., `room:lobby`):
 
-    ```json
     {
         "topic": "room:lobby",
         "event": "phx_join",
         "payload": {},
         "ref": "1"
     }
-    ```
 
 3. Send a Standard Message
 
 To broadcast a message to everyone in the room:
 
-    ```json
     {
         "topic": "room:lobby",
         "event": "new_message",
@@ -92,13 +89,11 @@ To broadcast a message to everyone in the room:
         },
         "ref": "2"
     }
-    ```
 
 4. Trigger an External Webhook Action
 
 To simulate a bot command that requires external API interaction (handled asynchronously by Oban):
 
-    ```json
     {
         "topic": "room:lobby",
         "event": "trigger_action",
@@ -108,7 +103,6 @@ To simulate a bot command that requires external API interaction (handled asynch
         },
         "ref": "3"
     }
-    ```
 
 Check your terminal logs to see Oban processing the HTTP request in the background!
 
